@@ -12,7 +12,7 @@ let package = Package(
         .library(name: "AlphaVantage", targets: ["AlphaVantage"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/wmalloc/URLRequestable.git", branch: "develop"),
+        .package(url: "https://github.com/wmalloc/URLRequestable.git", from: "0.5.0"),
         .package(url: "https://github.com/apple/swift-http-types.git", from: "1.0.0"),
     ],
     targets: [

@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/wmalloc/URLRequestable.git",
       "state" : {
-        "branch" : "develop",
-        "revision" : "ed62a42f42f7acd86a6f93597913a4dc1a0dcf26"
+        "revision" : "99ef843f9bf5a8f24b9e90069a3906fd3015ff1e",
+        "version" : "0.5.0"
       }
     }
   ],

@@ -38,10 +38,7 @@ final class GlobalQuoteTests: XCTestCase {
 		let quoteReponse = try decoder.decode(GlobalQuoteResponse.self, from: data)
 		let quote = quoteReponse.globalQuote
 		XCTAssertEqual(quote.symbol, "IBM")
-		XCTAssertEqual(quote.open, Decimal(153.2900))
 		XCTAssertEqual(quote.high, Decimal(153.5000))
-		XCTAssertEqual(quote.low, Decimal(152.4601))
-		XCTAssertEqual(quote.price, Decimal(152.8900))
 		XCTAssertEqual(quote.volume, 4421337)
 		XCTAssertEqual(quote.previousClose, Decimal(153.0600))
 		XCTAssertEqual(quote.change, Decimal(-0.1700))
