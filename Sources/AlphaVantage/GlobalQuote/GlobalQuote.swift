@@ -31,7 +31,7 @@ public struct GlobalQuote: Codable, Hashable, Sendable {
 	public let change: Decimal
 	public let changePercent: Double
 
-  static lazy var percentFormatter: NumberFormatter = {
+  static var percentFormatter: NumberFormatter = {
     let formatter = NumberFormatter()
     formatter.numberStyle = .percent
     return formatter
