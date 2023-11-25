@@ -42,7 +42,7 @@ final class GlobalQuoteTests: XCTestCase {
 		XCTAssertEqual(quote.volume, 4421337)
 		XCTAssertEqual(quote.previousClose, Decimal(153.0600))
 		XCTAssertEqual(quote.change, Decimal(-0.1700))
-		XCTAssertEqual(quote.changePercent, "-0.1111%")
+		XCTAssertEqual(quote.changePercent, -0.001111)
 	}
 
 	func testGlobalQuote() async throws {

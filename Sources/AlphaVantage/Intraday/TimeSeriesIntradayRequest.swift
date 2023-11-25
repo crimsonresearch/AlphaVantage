@@ -11,7 +11,7 @@ public struct TimeSeriesIntradayRequest<T: Decodable>: HTTPRequstable {
 	public typealias ResultType = T
 	public var queryItems: Set<URLQueryItem>? = [URLQueryItem(name: "function", value: Function.timeSeriesIntraday.rawValue)]
 
-	public init(symbol: Symbol, interval: IntradayInterval) {
+	public init(symbol: String, interval: IntradayInterval) {
 		let item = URLQueryItem(name: "symbol", value: symbol)
 		let intervalItem = URLQueryItem(name: "interval", value: interval.rawValue)
 		queryItems?.insert(item)

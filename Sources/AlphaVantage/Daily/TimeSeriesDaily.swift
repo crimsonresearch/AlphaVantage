@@ -30,7 +30,7 @@ public struct TimeSeriesDaily: Codable, Hashable, Sendable {
 		public init(from decoder: Decoder) throws {
 			let container = try decoder.container(keyedBy: CodingKeys.self)
 			self.information = try container.decode(String.self, forKey: .information)
-			self.symbol = try container.decode(Symbol.self, forKey: .symbol)
+			self.symbol = try container.decode(String.self, forKey: .symbol)
 			self.lastRefreshed = try container.decode(Date.self, forKey: .lastRefreshed)
 			self.outputSize = try container.decode(String.self, forKey: .outputSize)
 			let valueString = try container.decode(String.self, forKey: .timeZone)

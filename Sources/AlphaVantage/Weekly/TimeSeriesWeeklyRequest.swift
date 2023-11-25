@@ -14,7 +14,7 @@ public struct TimeSeriesWeeklyRequest: HTTPRequstable {
 
 	public var queryItems: Set<URLQueryItem>? = [URLQueryItem(name: "function", value: Function.timeSeriesWeekly.rawValue)]
 
-	public init(symbol: Symbol) {
+	public init(symbol: String) {
 		let item = URLQueryItem(name: "symbol", value: symbol)
 		queryItems?.insert(item)
 	}

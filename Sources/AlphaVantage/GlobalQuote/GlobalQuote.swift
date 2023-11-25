@@ -20,7 +20,7 @@ public struct GlobalQuoteResponse: Codable, Hashable, Sendable {
 }
 
 public struct GlobalQuote: Codable, Hashable, Sendable {
-	public let symbol: Symbol
+	public let symbol: String
 	public let open: Decimal
 	public let high: Decimal
 	public let low: Decimal
@@ -29,9 +29,15 @@ public struct GlobalQuote: Codable, Hashable, Sendable {
 	public let latestTradingDay: Date
 	public let previousClose: Decimal
 	public let change: Decimal
-	public let changePercent: String
+	public let changePercent: Double
 
-	public init(symbol: Symbol, open: Decimal, high: Decimal, low: Decimal, price: Decimal, volume: Int64, latestTradingDay: Date, previousClose: Decimal, change: Decimal, changePercent: String) {
+  static lazy var percentFormatter: NumberFormatter = {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .percent
+    return formatter
+  }()
+  
+	public init(symbol: String, open: Decimal, high: Decimal, low: Decimal, price: Decimal, volume: Int64, latestTradingDay: Date, previousClose: Decimal, change: Decimal, changePercent: Double) {
 		self.symbol = symbol
 		self.open = open
 		self.high = high
@@ -46,7 +52,7 @@ public struct GlobalQuote: Codable, Hashable, Sendable {
 
 	public init(from decoder: Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
-		self.symbol = try container.decode(Symbol.self, forKey: .symbol)
+		self.symbol = try container.decode(String.self, forKey: .symbol)
 		var valueString = try container.decode(String.self, forKey: .open)
 		self.open = Decimal(string: valueString) ?? .zero
 		valueString = try container.decode(String.self, forKey: .high)
@@ -62,9 +68,10 @@ public struct GlobalQuote: Codable, Hashable, Sendable {
 		self.previousClose = Decimal(string: valueString) ?? .zero
 		valueString = try container.decode(String.self, forKey: .change)
 		self.change = Decimal(string: valueString) ?? .zero
-		self.changePercent = try container.decode(String.self, forKey: .changePercent)
-	}
-
+    let changePercentString = try container.decode(String.self, forKey: .changePercent)
+    self.changePercent = Self.percentFormatter.number(from: changePercentString)?.doubleValue ?? 0.0
+  }
+  
 	private enum CodingKeys: String, CodingKey {
 		case symbol = "01. symbol"
 		case open = "02. open"

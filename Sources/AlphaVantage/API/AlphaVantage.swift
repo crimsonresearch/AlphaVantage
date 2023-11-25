@@ -26,35 +26,35 @@ public class AlphaVantage: HTTPTransferable {
 		self.apiKey = apiKey
 	}
 
-	public func getGlobalQuote(symbol: Symbol) async throws -> GlobalQuote {
+	public func getGlobalQuote(symbol: String) async throws -> GlobalQuote {
 		var request = GlobalQuoteRequest(symbol: symbol)
 		request.queryItems?.insert(apiKitQueryItem)
 		let result = try await data(for: request)
 		return result.globalQuote
 	}
 
-	public func getTimeSeriesIntraday<T: Decodable>(symbol: Symbol, interval: IntradayInterval) async throws -> T {
+	public func getTimeSeriesIntraday<T: Decodable>(symbol: String, interval: IntradayInterval) async throws -> T {
 		var request = TimeSeriesIntradayRequest<T>(symbol: symbol, interval: interval)
 		request.queryItems?.insert(apiKitQueryItem)
 		let result = try await data(for: request)
 		return result
 	}
 
-	public func getTimeSeriesDaily(symbol: Symbol) async throws -> TimeSeriesDaily {
+	public func getTimeSeriesDaily(symbol: String) async throws -> TimeSeriesDaily {
 		var request = TimeSeriesDailyRequest(symbol: symbol)
 		request.queryItems?.insert(apiKitQueryItem)
 		let result = try await data(for: request)
 		return result
 	}
 
-	public func getTimeSeriesWeekly(symbol: Symbol) async throws -> TimeSeriesWeekly {
+	public func getTimeSeriesWeekly(symbol: String) async throws -> TimeSeriesWeekly {
 		var request = TimeSeriesWeeklyRequest(symbol: symbol)
 		request.queryItems?.insert(apiKitQueryItem)
 		let result = try await data(for: request)
 		return result
 	}
 
-	public func getTimeSeriesMonthly(symbol: Symbol) async throws -> TimeSeriesMonthly {
+	public func getTimeSeriesMonthly(symbol: String) async throws -> TimeSeriesMonthly {
 		var request = TimeSeriesMonthlyRequest(symbol: symbol)
 		request.queryItems?.insert(apiKitQueryItem)
 		let result = try await data(for: request)
