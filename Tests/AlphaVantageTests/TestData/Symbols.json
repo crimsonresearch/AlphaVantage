@@ -1,0 +1,123 @@
+[
+	{
+		"1. symbol": "AAPL",
+		"2. name": "Apple Inc",
+		"3. type": "Equity",
+		"4. region": "United States",
+		"5. marketOpen": "09:30",
+		"6. marketClose": "16:00",
+		"7. timezone": "UTC-04",
+		"8. currency": "USD",
+		"9. matchScore": "0.7143"
+	},
+	{
+		"1. symbol": "IBM",
+		"2. name": "International Business Machines Corp",
+		"3. type": "Equity",
+		"4. region": "United States",
+		"5. marketOpen": "09:30",
+		"6. marketClose": "16:00",
+		"7. timezone": "UTC-04",
+		"8. currency": "USD",
+		"9. matchScore": "1.0000"
+	},
+	{
+		"1. symbol": "AMZN",
+		"2. name": "Amazon.com Inc",
+		"3. type": "Equity",
+		"4. region": "United States",
+		"5. marketOpen": "09:30",
+		"6. marketClose": "16:00",
+		"7. timezone": "UTC-04",
+		"8. currency": "USD",
+		"9. matchScore": "0.8000"
+	},
+	{
+		"1. symbol": "TSLA",
+		"2. name": "Tesla Inc",
+		"3. type": "Equity",
+		"4. region": "United States",
+		"5. marketOpen": "09:30",
+		"6. marketClose": "16:00",
+		"7. timezone": "UTC-04",
+		"8. currency": "USD",
+		"9. matchScore": "0.8889"
+	},
+	{
+		"1. symbol": "GOOG",
+		"2. name": "Alphabet Inc - Class C",
+		"3. type": "Equity",
+		"4. region": "United States",
+		"5. marketOpen": "09:30",
+		"6. marketClose": "16:00",
+		"7. timezone": "UTC-04",
+		"8. currency": "USD",
+		"9. matchScore": "0.5333"
+	},
+	{
+		"1. symbol": "META",
+		"2. name": "Meta Platforms Inc - Class A",
+		"3. type": "Equity",
+		"4. region": "United States",
+		"5. marketOpen": "09:30",
+		"6. marketClose": "16:00",
+		"7. timezone": "UTC-04",
+		"8. currency": "USD",
+		"9. matchScore": "1.0000"
+	},
+	{
+		"1. symbol": "MSFT",
+		"2. name": "Microsoft Corporation",
+		"3. type": "Equity",
+		"4. region": "United States",
+		"5. marketOpen": "09:30",
+		"6. marketClose": "16:00",
+		"7. timezone": "UTC-04",
+		"8. currency": "USD",
+		"9. matchScore": "0.6154"
+	},
+	{
+		"1. symbol": "NVDA",
+		"2. name": "NVIDIA Corp",
+		"3. type": "Equity",
+		"4. region": "United States",
+		"5. marketOpen": "09:30",
+		"6. marketClose": "16:00",
+		"7. timezone": "UTC-04",
+		"8. currency": "USD",
+		"9. matchScore": "0.8000"
+	},
+	{
+		"1. symbol": "AMD",
+		"2. name": "Advanced Micro Devices Inc",
+		"3. type": "Equity",
+		"4. region": "United States",
+		"5. marketOpen": "09:30",
+		"6. marketClose": "16:00",
+		"7. timezone": "UTC-04",
+		"8. currency": "USD",
+		"9. matchScore": "1.0000"
+	},
+	{
+		"1. symbol": "INTC",
+		"2. name": "Intel Corp",
+		"3. type": "Equity",
+		"4. region": "United States",
+		"5. marketOpen": "09:30",
+		"6. marketClose": "16:00",
+		"7. timezone": "UTC-04",
+		"8. currency": "USD",
+		"9. matchScore": "0.6667"
+	},
+	{
+		"1. symbol": "QCOM",
+		"2. name": "Qualcomm Inc",
+		"3. type": "Equity",
+		"4. region": "United States",
+		"5. marketOpen": "09:30",
+		"6. marketClose": "16:00",
+		"7. timezone": "UTC-04",
+		"8. currency": "USD",
+		"9. matchScore": "0.8000"
+	}
+]
