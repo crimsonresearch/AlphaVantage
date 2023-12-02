@@ -31,12 +31,12 @@ public struct GlobalQuote: Codable, Hashable, Sendable {
 	public let change: Decimal
 	public let changePercent: Double
 
-  static var percentFormatter: NumberFormatter = {
-    let formatter = NumberFormatter()
-    formatter.numberStyle = .percent
-    return formatter
-  }()
-  
+	static var percentFormatter: NumberFormatter = {
+		let formatter = NumberFormatter()
+		formatter.numberStyle = .percent
+		return formatter
+	}()
+
 	public init(symbol: String, open: Decimal, high: Decimal, low: Decimal, price: Decimal, volume: Int64, latestTradingDay: Date, previousClose: Decimal, change: Decimal, changePercent: Double) {
 		self.symbol = symbol
 		self.open = open
@@ -68,10 +68,10 @@ public struct GlobalQuote: Codable, Hashable, Sendable {
 		self.previousClose = Decimal(string: valueString) ?? .zero
 		valueString = try container.decode(String.self, forKey: .change)
 		self.change = Decimal(string: valueString) ?? .zero
-    let changePercentString = try container.decode(String.self, forKey: .changePercent)
-    self.changePercent = Self.percentFormatter.number(from: changePercentString)?.doubleValue ?? 0.0
-  }
-  
+		let changePercentString = try container.decode(String.self, forKey: .changePercent)
+		self.changePercent = Self.percentFormatter.number(from: changePercentString)?.doubleValue ?? 0.0
+	}
+
 	private enum CodingKeys: String, CodingKey {
 		case symbol = "01. symbol"
 		case open = "02. open"

@@ -26,16 +26,16 @@ final class SymbolSearchTests: XCTestCase {
 		api = nil
 	}
 
-  func testDecodeSymbols() throws {
-    guard let url = Bundle.module.url(forResource: "Symbols", withExtension: "json", subdirectory: "TestData") else {
-      throw URLError(.fileDoesNotExist)
-    }
-    let data = try Data(contentsOf: url)
-    let decoder = JSONDecoder()
-    let searchResults = try decoder.decode([SearchSymbol].self, from: data)
-    XCTAssertEqual(searchResults.count, 11)
-  }
-  
+	func testDecodeSymbols() throws {
+		guard let url = Bundle.module.url(forResource: "Symbols", withExtension: "json", subdirectory: "TestData") else {
+			throw URLError(.fileDoesNotExist)
+		}
+		let data = try Data(contentsOf: url)
+		let decoder = JSONDecoder()
+		let searchResults = try decoder.decode([SearchSymbol].self, from: data)
+		XCTAssertEqual(searchResults.count, 11)
+	}
+
 	func testDecodeSymbolSearch() throws {
 		guard let url = Bundle.module.url(forResource: "SymbolSearch", withExtension: "json", subdirectory: "TestData") else {
 			throw URLError(.fileDoesNotExist)
