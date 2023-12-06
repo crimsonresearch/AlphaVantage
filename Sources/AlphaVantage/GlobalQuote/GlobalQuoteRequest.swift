@@ -18,13 +18,25 @@ public struct GlobalQuoteRequest: HTTPRequstable {
 		queryItems?.insert(item)
 	}
 
-	public var transformer: Transformer<Data, ResultType> {
+	static var dateFormatter: DateFormatter {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "yyyy-mm-dd"
+		return formatter
+	}
+
+	var dateFormatter: DateFormatter {
+		Self.dateFormatter
+	}
+
+	public static var transformer: Transformer<Data, ResultType> {
 		{ data in
 			let decoder = JSONDecoder()
-			let formatter = DateFormatter()
-			formatter.dateFormat = "yyyy-mm-dd"
-			decoder.dateDecodingStrategy = .formatted(formatter)
+			decoder.dateDecodingStrategy = .formatted(dateFormatter)
 			return try decoder.decode(GlobalQuoteResponse.self, from: data)
 		}
+	}
+
+	public var transformer: Transformer<Data, ResultType> {
+		Self.transformer
 	}
 }

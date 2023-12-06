@@ -18,17 +18,25 @@ public struct TimeSeriesIntradayRequest<T: Decodable>: HTTPRequstable {
 		queryItems?.insert(intervalItem)
 	}
 
-	var dateFormatter: DateFormatter {
+	static var dateFormatter: DateFormatter {
 		let formatter = DateFormatter()
 		formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 		return formatter
 	}
 
-	public var transformer: Transformer<Data, ResultType> {
+	var dateFormatter: DateFormatter {
+		Self.dateFormatter
+	}
+
+	public static var transformer: Transformer<Data, ResultType> {
 		{ data in
 			let decoder = JSONDecoder()
 			decoder.dateDecodingStrategy = .formatted(dateFormatter)
 			return try decoder.decode(T.self, from: data)
 		}
+	}
+
+	public var transformer: Transformer<Data, ResultType> {
+		Self.transformer
 	}
 }

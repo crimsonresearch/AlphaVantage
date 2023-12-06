@@ -18,17 +18,25 @@ public struct TimeSeriesMonthlyRequest: HTTPRequstable {
 		queryItems?.insert(item)
 	}
 
-	public var dateFormatter: DateFormatter {
+	static var dateFormatter: DateFormatter {
 		let formatter = DateFormatter()
 		formatter.dateFormat = "yyyy-mm-dd"
 		return formatter
 	}
 
-	public var transformer: Transformer<Data, ResultType> {
+	var dateFormatter: DateFormatter {
+		Self.dateFormatter
+	}
+
+	public static var transformer: Transformer<Data, ResultType> {
 		{ data in
 			let decoder = JSONDecoder()
 			decoder.dateDecodingStrategy = .formatted(dateFormatter)
 			return try decoder.decode(ResultType.self, from: data)
 		}
+	}
+
+	public var transformer: Transformer<Data, ResultType> {
+		Self.transformer
 	}
 }
