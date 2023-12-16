@@ -11,7 +11,7 @@ import URLRequestable
 import XCTest
 
 final class TimeSeriesMonthlyTests: XCTestCase {
-	var api: AlphaVantage?
+ 	var api: AlphaVantage?
 
 	override func setUpWithError() throws {
 		let config = URLSessionConfiguration.ephemeral
