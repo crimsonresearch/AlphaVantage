@@ -8,7 +8,7 @@
 import Foundation
 import URLRequestable
 
-public struct GlobalQuoteRequest: HTTPRequstable {
+public struct GlobalQuoteRequest: HTTPRequestable {
 	public typealias ResultType = GlobalQuoteResponse
 
 	public var queryItems: Set<URLQueryItem>? = [URLQueryItem(name: "function", value: Function.quote.rawValue)]
@@ -29,7 +29,7 @@ public struct GlobalQuoteRequest: HTTPRequstable {
 	}
 
 	public static var transformer: Transformer<Data, ResultType> {
-		{ data in
+		{ data, response in
 			let decoder = JSONDecoder()
 			decoder.dateDecodingStrategy = .formatted(dateFormatter)
 			return try decoder.decode(GlobalQuoteResponse.self, from: data)

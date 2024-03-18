@@ -7,7 +7,7 @@
 import Foundation
 import URLRequestable
 
-public struct TimeSeriesIntradayRequest<T: Decodable>: HTTPRequstable {
+public struct TimeSeriesIntradayRequest<T: Decodable>: HTTPRequestable {
 	public typealias ResultType = T
 	public var queryItems: Set<URLQueryItem>? = [URLQueryItem(name: "function", value: Function.timeSeriesIntraday.rawValue)]
 
@@ -29,7 +29,7 @@ public struct TimeSeriesIntradayRequest<T: Decodable>: HTTPRequstable {
 	}
 
 	public static var transformer: Transformer<Data, ResultType> {
-		{ data in
+		{ data, response in
 			let decoder = JSONDecoder()
 			decoder.dateDecodingStrategy = .formatted(dateFormatter)
 			return try decoder.decode(T.self, from: data)
