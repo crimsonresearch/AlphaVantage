@@ -8,7 +8,7 @@
 @testable import AlphaVantage
 import HTTPTypes
 import os.log
-import URLRequestable
+import HTTPRequestable
 import XCTest
 
 final class SymbolSearchTests: XCTestCase {

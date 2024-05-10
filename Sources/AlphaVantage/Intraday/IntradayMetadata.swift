@@ -23,7 +23,7 @@ public struct IntradayMetadata: Codable, Hashable, Sendable {
 		self.timeZone = timeZone
 	}
 
-	public init(from decoder: Decoder) throws {
+  public init(from decoder: any Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
 		self.information = try container.decode(String.self, forKey: .information)
 		self.symbol = try container.decode(String.self, forKey: .symbol)

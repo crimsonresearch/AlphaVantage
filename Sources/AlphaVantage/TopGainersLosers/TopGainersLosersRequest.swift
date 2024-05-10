@@ -7,7 +7,7 @@
 
 import Foundation
 import HTTPTypes
-import URLRequestable
+import HTTPRequestable
 
 public struct TopGainersLosersRequest: HTTPRequestable {
   public typealias ResultType = TopGainersLosers

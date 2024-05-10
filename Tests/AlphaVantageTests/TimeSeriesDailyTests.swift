@@ -7,7 +7,7 @@
 @testable import AlphaVantage
 import HTTPTypes
 import OSLog
-import URLRequestable
+import HTTPRequestable
 import XCTest
 
 final class TimeSeriesDailyTests: XCTestCase {

@@ -50,7 +50,7 @@ public struct GlobalQuote: Codable, Hashable, Sendable {
 		self.changePercent = changePercent
 	}
 
-	public init(from decoder: Decoder) throws {
+  public init(from decoder: any Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
 		self.symbol = try container.decode(String.self, forKey: .symbol)
 		var valueString = try container.decode(String.self, forKey: .open)

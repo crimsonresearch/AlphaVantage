@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import URLRequestable
+import HTTPRequestable
 
 public extension HTTPRequestable {
   var authority: String {

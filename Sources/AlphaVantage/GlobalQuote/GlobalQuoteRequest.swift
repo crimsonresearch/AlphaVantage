@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import URLRequestable
+import HTTPRequestable
 
 public struct GlobalQuoteRequest: HTTPRequestable {
 	public typealias ResultType = GlobalQuoteResponse

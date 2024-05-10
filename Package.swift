@@ -10,14 +10,14 @@ let package = Package(
       .library(name: "AlphaVantage", targets: ["AlphaVantage"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/wmalloc/URLRequestable.git", from: "0.5.5"),
+        .package(url: "https://github.com/wmalloc/HTTPRequestable.git", from: "0.7.0"),
         .package(url: "https://github.com/apple/swift-http-types.git", from: "1.0.3"),
     ],
     targets: [
-      .target(name: "AlphaVantage", dependencies: ["URLRequestable",
+      .target(name: "AlphaVantage", dependencies: ["HTTPRequestable",
                                                    .product(name: "HTTPTypes", package: "swift-http-types"),
                                                    .product(name: "HTTPTypesFoundation", package: "swift-http-types")]),
-        .testTarget(name: "AlphaVantageTests", dependencies: ["AlphaVantage", "URLRequestable",
+        .testTarget(name: "AlphaVantageTests", dependencies: ["AlphaVantage", "HTTPRequestable",
                                                               .product(name: "HTTPTypes", package: "swift-http-types"),
                                                               .product(name: "HTTPTypesFoundation", package: "swift-http-types")],
                     resources: [.copy("TestData")]),

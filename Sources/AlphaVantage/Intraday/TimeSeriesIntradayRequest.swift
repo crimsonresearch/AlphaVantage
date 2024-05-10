@@ -5,7 +5,7 @@
 //
 
 import Foundation
-import URLRequestable
+import HTTPRequestable
 
 public struct TimeSeriesIntradayRequest<T: Decodable>: HTTPRequestable {
 	public typealias ResultType = T

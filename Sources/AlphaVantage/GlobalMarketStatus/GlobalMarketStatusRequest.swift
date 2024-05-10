@@ -6,7 +6,7 @@
 
 import Foundation
 import HTTPTypes
-import URLRequestable
+import HTTPRequestable
 
 public struct GlobalMarketStatusRequest: HTTPRequestable {
 	public typealias ResultType = GlobalMarketStatus

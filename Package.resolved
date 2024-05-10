@@ -1,21 +1,21 @@
 {
   "pins" : [
     {
+      "identity" : "httprequestable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/wmalloc/HTTPRequestable.git",
+      "state" : {
+        "revision" : "a2dc2fd00041dc20dbfe7608c2ee1b115a4991d3",
+        "version" : "0.7.0"
+      }
+    },
+    {
       "identity" : "swift-http-types",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-http-types.git",
       "state" : {
         "revision" : "12358d55a3824bd5fed310b999ea8cf83a9a1a65",
         "version" : "1.0.3"
-      }
-    },
-    {
-      "identity" : "urlrequestable",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/wmalloc/URLRequestable.git",
-      "state" : {
-        "revision" : "2988948266de88b7b61018634939f0814d483a08",
-        "version" : "0.5.5"
       }
     }
   ],

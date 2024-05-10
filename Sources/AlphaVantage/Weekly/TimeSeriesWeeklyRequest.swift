@@ -7,7 +7,7 @@
 
 import Foundation
 import HTTPTypes
-import URLRequestable
+import HTTPRequestable
 
 public struct TimeSeriesWeeklyRequest: HTTPRequestable {
 	public typealias ResultType = TimeSeriesWeekly

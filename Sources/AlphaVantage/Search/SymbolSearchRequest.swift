@@ -7,7 +7,7 @@
 
 import Foundation
 import HTTPTypes
-import URLRequestable
+import HTTPRequestable
 
 public struct SymbolSearchRequest: HTTPRequestable {
 	public typealias ResultType = SymbolSearchResponse
