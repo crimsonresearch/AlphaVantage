@@ -9,7 +9,7 @@ import Foundation
 import HTTPTypes
 import HTTPRequestable
 
-public struct SymbolSearchRequest: HTTPRequestable {
+public struct SymbolSearchRequestable: HTTPRequestable {
 	public typealias ResultType = SymbolSearchResponse
 	public var queryItems: Set<URLQueryItem>? = [URLQueryItem(name: "function", value: Function.search.rawValue)]
   

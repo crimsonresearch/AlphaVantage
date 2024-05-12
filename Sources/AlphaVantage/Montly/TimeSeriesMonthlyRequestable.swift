@@ -1,6 +1,5 @@
 //
-//  TimeSeriesDailyRequest.swift
-//
+//  TimeSeriesMonthlyRequest.swift
 //
 //  Created by Waqar Malik on 11/18/23.
 //
@@ -9,10 +8,10 @@ import Foundation
 import HTTPTypes
 import HTTPRequestable
 
-public struct TimeSeriesDailyRequest: HTTPRequestable {
-	public typealias ResultType = TimeSeriesDaily
+public struct TimeSeriesMonthlyRequestable: HTTPRequestable {
+	public typealias ResultType = TimeSeriesMonthly
 
-	public var queryItems: Set<URLQueryItem>? = [URLQueryItem(name: "function", value: Function.timeSeriesDaily.rawValue)]
+	public var queryItems: Set<URLQueryItem>? = [URLQueryItem(name: "function", value: Function.timeSeriesMonthly.rawValue)]
 
 	public init(symbol: String) {
 		let item = URLQueryItem(name: "symbol", value: symbol)

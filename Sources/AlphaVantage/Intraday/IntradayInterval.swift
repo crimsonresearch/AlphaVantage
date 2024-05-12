@@ -7,43 +7,32 @@
 import Foundation
 
 public enum IntradayInterval: String, Hashable, CaseIterable, Sendable, Codable {
-	case oneMinute = "1min"
-	case fiveMinutes = "5min"
-	case fifteenMinutes = "15min"
-	case thirtyMinutes = "30min"
-	case oneHour = "60min"
+  case oneMinute = "1min"
+  case fiveMinutes = "5min"
+  case fifteenMinutes = "15min"
+  case thirtyMinutes = "30min"
+  case oneHour = "60min"
 }
 
 extension IntradayInterval: CustomStringConvertible {
-	public var description: String {
-		switch self {
-		case .oneMinute:
-			return "1 Min"
-		case .fiveMinutes:
-			return "5 Mins"
-		case .fifteenMinutes:
-			return "15 Mins"
-		case .thirtyMinutes:
-			return "30 Mins"
-		case .oneHour:
-			return "60 Mins"
-		}
-	}
+  public var description: String {
+    switch self {
+    case .oneMinute:
+      String(localized: "intraday_interval_1min", bundle: .module)
+    case .fiveMinutes:
+      String(localized: "intraday_interval_5min", bundle: .module)
+    case .fifteenMinutes:
+      String(localized: "intraday_interval_15min", bundle: .module)
+    case .thirtyMinutes:
+      String(localized: "intraday_interval_30min", bundle: .module)
+    case .oneHour:
+      String(localized: "intraday_interval_60min", bundle: .module)
+    }
+  }
 }
 
 extension IntradayInterval: CustomDebugStringConvertible {
-	public var debugDescription: String {
-		switch self {
-		case .oneMinute:
-			return "1min"
-		case .fiveMinutes:
-			return "5min"
-		case .fifteenMinutes:
-			return "15min"
-		case .thirtyMinutes:
-			return "30min"
-		case .oneHour:
-			return "60min"
-		}
-	}
+  public var debugDescription: String {
+    description
+  }
 }

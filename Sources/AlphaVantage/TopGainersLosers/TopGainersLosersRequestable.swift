@@ -9,7 +9,7 @@ import Foundation
 import HTTPTypes
 import HTTPRequestable
 
-public struct TopGainersLosersRequest: HTTPRequestable {
+public struct TopGainersLosersRequestable: HTTPRequestable {
   public typealias ResultType = TopGainersLosers
 
   public var queryItems: Set<URLQueryItem>? = [URLQueryItem(name: "function", value: Function.topGainersLosers.rawValue)]

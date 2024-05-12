@@ -31,13 +31,14 @@ public struct GlobalQuote: Codable, Hashable, Sendable {
 	public let change: Decimal
 	public let changePercent: Double
 
-	static var percentFormatter: NumberFormatter = {
+  static var percentFormatter: NumberFormatter {
 		let formatter = NumberFormatter()
 		formatter.numberStyle = .percent
 		return formatter
-	}()
+	}
 
-	public init(symbol: String, open: Decimal, high: Decimal, low: Decimal, price: Decimal, volume: Int64, latestTradingDay: Date, previousClose: Decimal, change: Decimal, changePercent: Double) {
+	public init(symbol: String, open: Decimal, high: Decimal, low: Decimal, price: Decimal, volume: Int64, latestTradingDay: Date, 
+              previousClose: Decimal, change: Decimal, changePercent: Double) {
 		self.symbol = symbol
 		self.open = open
 		self.high = high

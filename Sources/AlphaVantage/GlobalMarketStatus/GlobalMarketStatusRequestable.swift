@@ -8,7 +8,7 @@ import Foundation
 import HTTPTypes
 import HTTPRequestable
 
-public struct GlobalMarketStatusRequest: HTTPRequestable {
+public struct GlobalMarketStatusRequestable: HTTPRequestable {
 	public typealias ResultType = GlobalMarketStatus
 	public var queryItems: Set<URLQueryItem>? = [URLQueryItem(name: "function", value: Function.marketStatus.rawValue)]
 
