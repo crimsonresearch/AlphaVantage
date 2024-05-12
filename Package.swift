@@ -27,7 +27,7 @@ let package = Package(
     .target(name: "AlphaVantage", dependencies: ["HTTPRequestable",
                                                  .product(name: "HTTPTypes", package: "swift-http-types"),
                                                  .product(name: "HTTPTypesFoundation", package: "swift-http-types")],
-            resources: [.copy("Resources")], swiftSettings: swiftSettings),
+            resources: [.process("Resources")], swiftSettings: swiftSettings),
     .testTarget(name: "AlphaVantageTests", dependencies: ["AlphaVantage", "HTTPRequestable",
                                                           .product(name: "HTTPTypes", package: "swift-http-types"),
                                                           .product(name: "HTTPTypesFoundation", package: "swift-http-types")],
