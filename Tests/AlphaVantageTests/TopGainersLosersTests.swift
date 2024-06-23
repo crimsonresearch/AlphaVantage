@@ -6,9 +6,9 @@
 //
 
 @testable import AlphaVantage
+import HTTPRequestable
 import HTTPTypes
 import OSLog
-import HTTPRequestable
 import XCTest
 
 final class TopGainersLosersTests: XCTestCase {

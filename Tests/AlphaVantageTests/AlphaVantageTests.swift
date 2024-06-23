@@ -1,7 +1,7 @@
 @testable import AlphaVantage
+import HTTPRequestable
 import HTTPTypes
 import os.log
-import HTTPRequestable
 import XCTest
 
 private let log = Logger(subsystem: "net.crimsonresearch.AlphaVantage", category: "Tests")

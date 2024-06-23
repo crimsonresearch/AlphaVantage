@@ -29,7 +29,7 @@ public struct SearchSymbol: Codable, Hashable, Sendable {
 		self.matchScore = matchScore
 	}
 
-  public init(from decoder: any Decoder) throws {
+	public init(from decoder: any Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
 		self.symbol = try container.decode(String.self, forKey: .symbol)
 		self.name = try container.decode(String.self, forKey: .name)

@@ -9,18 +9,12 @@ import Foundation
 import HTTPRequestable
 
 public extension HTTPRequestable {
-  var authority: String {
-    "www.alphavantage.co"
-  }
-
-  var path: String {
-    "/query"
-  }
+	var environment: HTTPEnvironment { .init(scheme: "https", authority: "www.alphavantage.co", path: "/query") }
 }
 
-extension HTTPRequestable where ResultType: Decodable {
-  public var transformer: Transformer<Data, ResultType> {
-    { data, response in
+public extension HTTPRequestable where ResultType: Decodable {
+  var transformer: Transformer<Data, ResultType> {
+    { data, _ in
       let decoder = JSONDecoder()
       return try decoder.decode(ResultType.self, from: data)
     }

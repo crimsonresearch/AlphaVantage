@@ -1,5 +1,5 @@
 //
-//  GlobalQuoteRequest.swift
+//  GlobalQuoteRequestable.swift
 //
 //
 //  Created by Waqar Malik on 11/17/23.
@@ -9,7 +9,7 @@ import Foundation
 import HTTPRequestable
 
 public struct GlobalQuoteRequestable: HTTPRequestable {
-	public typealias ResultType = GlobalQuoteResponse
+	public typealias ResultType = GlobalQuote
 
 	public var queryItems: Set<URLQueryItem>? = [URLQueryItem(name: "function", value: Function.quote.rawValue)]
 
@@ -29,13 +29,14 @@ public struct GlobalQuoteRequestable: HTTPRequestable {
 	}
 
 	public static var transformer: Transformer<Data, ResultType> {
-		{ data, response in
+		{ data, _ in
 			let decoder = JSONDecoder()
 			decoder.dateDecodingStrategy = .formatted(dateFormatter)
-			return try decoder.decode(GlobalQuoteResponse.self, from: data)
+			return try decoder.decode(GlobalQuoteResponse.self, from: data).globalQuote
 		}
 	}
 
+  @inlinable
 	public var transformer: Transformer<Data, ResultType> {
 		Self.transformer
 	}

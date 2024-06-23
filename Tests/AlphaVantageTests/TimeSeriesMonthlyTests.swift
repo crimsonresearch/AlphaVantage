@@ -5,13 +5,13 @@
 //
 
 @testable import AlphaVantage
+import HTTPRequestable
 import HTTPTypes
 import OSLog
-import HTTPRequestable
 import XCTest
 
 final class TimeSeriesMonthlyTests: XCTestCase {
- 	var api: AlphaVantage?
+	var api: AlphaVantage?
 
 	override func setUpWithError() throws {
 		let config = URLSessionConfiguration.ephemeral
@@ -47,7 +47,7 @@ final class TimeSeriesMonthlyTests: XCTestCase {
 				throw URLError(.badURL)
 			}
 			let data = try Data(contentsOf: Bundle.module.url(forResource: "TimeSeriesMonthly", withExtension: "json", subdirectory: "TestData")!)
-			let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: [HTTPField.Name.contentType.canonicalName: HTTPContentType.json])!
+			let response = HTTPURLResponse(url: url, statusCode: 200, headerFields: [.contentType(.json)])
 			return (response, data)
 		}
 

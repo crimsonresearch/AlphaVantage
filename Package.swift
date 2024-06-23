@@ -20,7 +20,7 @@ let package = Package(
     .library(name: "AlphaVantage", targets: ["AlphaVantage"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/wmalloc/HTTPRequestable.git", branch: "feature/Concurrency"),
+    .package(url: "https://github.com/wmalloc/HTTPRequestable.git", from: "0.7.4"),
     .package(url: "https://github.com/apple/swift-http-types.git", from: "1.0.3"),
   ],
   targets: [

@@ -6,9 +6,9 @@
 //
 
 @testable import AlphaVantage
+import HTTPRequestable
 import HTTPTypes
 import os.log
-import HTTPRequestable
 import XCTest
 
 final class SymbolSearchTests: XCTestCase {
@@ -53,7 +53,7 @@ final class SymbolSearchTests: XCTestCase {
 				throw URLError(.badURL)
 			}
 			let data = try Data(contentsOf: Bundle.module.url(forResource: "SymbolSearch", withExtension: "json", subdirectory: "TestData")!)
-			let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: [HTTPField.Name.contentType.canonicalName: HTTPContentType.json])!
+			let response = HTTPURLResponse(url: url, statusCode: 200, headerFields: [.accept(.json)])
 			return (response, data)
 		}
 

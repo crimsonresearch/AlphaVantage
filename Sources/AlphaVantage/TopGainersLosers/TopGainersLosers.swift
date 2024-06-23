@@ -36,7 +36,7 @@ public struct TopGainersLosers: Codable, Hashable, Sendable {
 			self.volume = volume
 		}
 
-    public init(from decoder: any Decoder) throws {
+		public init(from decoder: any Decoder) throws {
 			let container = try decoder.container(keyedBy: CodingKeys.self)
 			self.ticker = try container.decode(String.self, forKey: .ticker)
 			var valueString = try container.decode(String.self, forKey: .price)

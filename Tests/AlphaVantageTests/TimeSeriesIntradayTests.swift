@@ -6,9 +6,9 @@
 //
 
 @testable import AlphaVantage
+import HTTPRequestable
 import HTTPTypes
 import OSLog
-import HTTPRequestable
 import XCTest
 
 final class TimeSeriesIntradayTests: XCTestCase {
@@ -47,7 +47,7 @@ final class TimeSeriesIntradayTests: XCTestCase {
 				throw URLError(.badURL)
 			}
 			let data = try Data(contentsOf: Bundle.module.url(forResource: "TimeSeriesIntraday1min", withExtension: "json", subdirectory: "TestData")!)
-			let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: [HTTPField.Name.contentType.canonicalName: HTTPContentType.json])!
+			let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: [HTTPField.Name.contentType.canonicalName: HTTPContentType.json.rawValue])!
 			return (response, data)
 		}
 
@@ -78,7 +78,7 @@ final class TimeSeriesIntradayTests: XCTestCase {
 				throw URLError(.badURL)
 			}
 			let data = try Data(contentsOf: Bundle.module.url(forResource: "TimeSeriesIntraday5min", withExtension: "json", subdirectory: "TestData")!)
-			let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: [HTTPField.Name.contentType.canonicalName: HTTPContentType.json])!
+			let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: [HTTPField.Name.contentType.canonicalName: HTTPContentType.json.rawValue])!
 			return (response, data)
 		}
 
@@ -109,7 +109,7 @@ final class TimeSeriesIntradayTests: XCTestCase {
 				throw URLError(.badURL)
 			}
 			let data = try Data(contentsOf: Bundle.module.url(forResource: "TimeSeriesIntraday15min", withExtension: "json", subdirectory: "TestData")!)
-			let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: [HTTPField.Name.contentType.canonicalName: HTTPContentType.json])!
+			let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: [HTTPField.Name.contentType.canonicalName: HTTPContentType.json.rawValue])!
 			return (response, data)
 		}
 
@@ -140,7 +140,7 @@ final class TimeSeriesIntradayTests: XCTestCase {
 				throw URLError(.badURL)
 			}
 			let data = try Data(contentsOf: Bundle.module.url(forResource: "TimeSeriesIntraday30min", withExtension: "json", subdirectory: "TestData")!)
-			let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: [HTTPField.Name.contentType.canonicalName: HTTPContentType.json])!
+			let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: [HTTPField.Name.contentType.canonicalName: HTTPContentType.json.rawValue])!
 			return (response, data)
 		}
 
@@ -171,7 +171,7 @@ final class TimeSeriesIntradayTests: XCTestCase {
 				throw URLError(.badURL)
 			}
 			let data = try Data(contentsOf: Bundle.module.url(forResource: "TimeSeriesIntraday60min", withExtension: "json", subdirectory: "TestData")!)
-			let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: [HTTPField.Name.contentType.canonicalName: HTTPContentType.json])!
+			let response = HTTPURLResponse(url: url, statusCode: 200, headerFields: [.contentType(.json)])
 			return (response, data)
 		}
 

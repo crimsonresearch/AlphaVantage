@@ -27,7 +27,7 @@ public struct TimeSeriesDaily: Codable, Hashable, Sendable {
 		public let outputSize: String
 		public let timeZone: TimeZone
 
-    public init(from decoder: any Decoder) throws {
+		public init(from decoder: any Decoder) throws {
 			let container = try decoder.container(keyedBy: CodingKeys.self)
 			self.information = try container.decode(String.self, forKey: .information)
 			self.symbol = try container.decode(String.self, forKey: .symbol)

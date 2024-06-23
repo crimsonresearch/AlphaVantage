@@ -1,22 +1,22 @@
 //
-//  TimeSeriesWeeklyRequest.swift
+//  TimeSeriesWeeklyRequestable.swift
 //
 //
 //  Created by Waqar Malik on 11/18/23.
 //
 
 import Foundation
-import HTTPTypes
 import HTTPRequestable
+import HTTPTypes
 
 public struct TimeSeriesWeeklyRequestable: HTTPRequestable {
 	public typealias ResultType = TimeSeriesWeekly
 
-	public var queryItems: Set<URLQueryItem>? = [URLQueryItem(name: "function", value: Function.timeSeriesWeekly.rawValue)]
+	public var queryItems: [URLQueryItem]? = [URLQueryItem(name: "function", value: Function.timeSeriesWeekly.rawValue)]
 
 	public init(symbol: String) {
 		let item = URLQueryItem(name: "symbol", value: symbol)
-		queryItems?.insert(item)
+		queryItems?.append(item)
 	}
 
 	static var dateFormatter: DateFormatter {
@@ -30,14 +30,15 @@ public struct TimeSeriesWeeklyRequestable: HTTPRequestable {
 	}
 
 	public static var transformer: Transformer<Data, ResultType> {
-    { data, response in
+		{ data, _ in
 			let decoder = JSONDecoder()
 			decoder.dateDecodingStrategy = .formatted(dateFormatter)
 			return try decoder.decode(ResultType.self, from: data)
 		}
 	}
 
-	public var transformer: Transformer<Data, ResultType> {
+  @inlinable
+  public var transformer: Transformer<Data, ResultType> {
 		Self.transformer
 	}
 }

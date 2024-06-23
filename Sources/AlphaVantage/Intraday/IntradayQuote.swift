@@ -21,7 +21,7 @@ public struct IntradayQuote: Codable, Hashable, Sendable {
 		self.volume = volume
 	}
 
-  public init(from decoder: any Decoder) throws {
+	public init(from decoder: any Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
 		var valueString = try container.decode(String.self, forKey: .open)
 		self.open = Decimal(string: valueString) ?? .zero
